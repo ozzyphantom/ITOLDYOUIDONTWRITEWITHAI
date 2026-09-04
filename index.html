@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>IDONTWRITEWITHAI</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- fake camera-permission toast: shown once per browser, see script.js -->
+<div id="toast" class="toast" aria-live="polite" hidden>
+  <div id="toast-card" class="toast-card">
+    <svg class="toast-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h11a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2zM17 10l5-3v10l-5-3z" fill="#5f6368"/></svg>
+    <p class="toast-text">IDONTWRITEWITHAI wants to access your camera and watch you read this page.</p>
+    <div class="toast-actions">
+      <button type="button" id="toast-allow" class="toast-allow">Allow</button>
+      <button type="button" id="toast-deny" class="toast-deny">Deny</button>
+    </div>
+  </div>
+  <p id="toast-secret" class="toast-secret" hidden>wtf is wrong with you?</p>
+  <a id="toast-frown" class="toast-frown" href="https://www.merriam-webster.com/dictionary/disappointing" target="_blank" rel="noopener" aria-label="disappointing" hidden>
+    <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="29" fill="#ffd93b" stroke="#222" stroke-width="3"/><circle cx="22" cy="26" r="4" fill="#222"/><circle cx="42" cy="26" r="4" fill="#222"/><path d="M20 46 Q32 34 44 46" fill="none" stroke="#222" stroke-width="3.5" stroke-linecap="round"/></svg>
+  </a>
+</div>
+
+<main class="page">
+
+  <section class="hero">
+    <h1>Tired of all of your friends, family, fans, lovers, colleagues, and pets accusing you of using AI to write your Substack?</h1>
+    <p class="sub">let us watch you.</p>
+    <!-- BLOG POST LINK PLACEHOLDER (also in the footer) -->
+    <a class="btn btn-big" href="https://thismightnotmatter.substack.com/p/placeholder">LEARN MORE</a>
+  </section>
+
+  <hr>
+
+  <section class="cert">
+    <div class="seal">
+      <svg viewBox="0 0 200 262" role="img" aria-label="IDONTWRITEWITHAI">
+        <defs>
+          <radialGradient id="gold" cx="38%" cy="32%" r="75%">
+            <stop offset="0" stop-color="#fff6b0"/>
+            <stop offset=".4" stop-color="#f5c842"/>
+            <stop offset=".78" stop-color="#d9a21b"/>
+            <stop offset="1" stop-color="#a5780c"/>
+          </radialGradient>
+          <linearGradient id="ribbon" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#e6b92e"/>
+            <stop offset="1" stop-color="#b07f0c"/>
+          </linearGradient>
+          <path id="arc-top" d="M 42 100 A 58 58 0 0 1 158 100"/>
+          <path id="arc-bottom" d="M 42 100 A 58 58 0 0 0 158 100"/>
+        </defs>
+        <polygon points="66,150 100,158 84,254 70,240 56,250" fill="url(#ribbon)" stroke="#8a6508" stroke-width="1"/>
+        <polygon points="134,150 100,158 116,254 130,240 144,250" fill="url(#ribbon)" stroke="#8a6508" stroke-width="1"/>
+        <path d="M 188.0 100.0 A 13 13 0 0 1 185.0 122.8 A 13 13 0 0 1 176.2 144.0 A 13 13 0 0 1 162.2 162.2 A 13 13 0 0 1 144.0 176.2 A 13 13 0 0 1 122.8 185.0 A 13 13 0 0 1 100.0 188.0 A 13 13 0 0 1 77.2 185.0 A 13 13 0 0 1 56.0 176.2 A 13 13 0 0 1 37.8 162.2 A 13 13 0 0 1 23.8 144.0 A 13 13 0 0 1 15.0 122.8 A 13 13 0 0 1 12.0 100.0 A 13 13 0 0 1 15.0 77.2 A 13 13 0 0 1 23.8 56.0 A 13 13 0 0 1 37.8 37.8 A 13 13 0 0 1 56.0 23.8 A 13 13 0 0 1 77.2 15.0 A 13 13 0 0 1 100.0 12.0 A 13 13 0 0 1 122.8 15.0 A 13 13 0 0 1 144.0 23.8 A 13 13 0 0 1 162.2 37.8 A 13 13 0 0 1 176.2 56.0 A 13 13 0 0 1 185.0 77.2 A 13 13 0 0 1 188.0 100.0 Z" fill="url(#gold)" stroke="#a5780c" stroke-width="1"/>
+        <circle cx="100" cy="100" r="80" fill="none" stroke="#8a6508" stroke-width="1.5"/>
+        <circle cx="100" cy="100" r="76" fill="none" stroke="#8a6508" stroke-width=".75"/>
+        <circle cx="100" cy="100" r="42" fill="none" stroke="#8a6508" stroke-width="1"/>
+        <text font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="bold" letter-spacing="1" fill="#4a3300">
+          <textPath href="#arc-top" startOffset="50%" text-anchor="middle">IDONTWRITEWITHAI</textPath>
+        </text>
+        <text font-family="Georgia, 'Times New Roman', serif" font-size="12" fill="#4a3300">
+          <textPath href="#arc-bottom" startOffset="50%" text-anchor="middle">★ ★ ★ ★ ★</textPath>
+        </text>
+        <path d="M 68 100 Q 100 74 132 100 Q 100 126 68 100 Z" fill="#fffbe6" stroke="#4a3300" stroke-width="2"/>
+        <circle cx="100" cy="100" r="12" fill="#8a6508"/>
+        <circle cx="100" cy="100" r="6" fill="#1b1200"/>
+        <circle cx="104" cy="96" r="2.2" fill="#fff"/>
+        <circle cx="100" cy="100" r="84" fill="none" stroke="#fff" stroke-opacity=".5" stroke-width="2.5" stroke-dasharray="110 420" transform="rotate(-150 100 100)"/>
+      </svg>
+    </div>
+    <p>we will watch you. and then give you this certificate!</p>
+  </section>
+
+  <hr>
+
+  <section class="cta">
+    <form id="cta">
+      <label for="email">email</label>
+      <input id="email" type="email" autocomplete="email" inputmode="email">
+
+      <label for="promo">promo code</label>
+      <input id="promo" type="text" autocomplete="off" autocapitalize="characters" spellcheck="false">
+
+      <fieldset>
+        <legend>payment</legend>
+        <div class="radios">
+          <label title="these don't do anything"><input type="radio" name="payment" value="check" title="these don't do anything"> Check</label>
+          <label title="these don't do anything"><input type="radio" name="payment" value="cash" title="these don't do anything"> Cash</label>
+          <label title="these don't do anything"><input type="radio" name="payment" value="crypto" title="these don't do anything"> Crypto</label>
+          <label title="these don't do anything"><input type="radio" name="payment" value="trade" title="these don't do anything"> Trade</label>
+        </div>
+      </fieldset>
+
+      <button type="submit" class="btn">SUBMIT</button>
+    </form>
+
+    <!-- the real thing: revealed when they say yes -->
+    <div id="embed" hidden>
+      <iframe id="embed-frame" class="embed-frame" data-src="https://thismightnotmatter.substack.com/embed?transparent=1" width="480" height="150" frameborder="0" scrolling="no" title="This Might Not Matter"></iframe>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <a href="https://ozzyphantom.com">ozzyphantom.com</a> &bull; <a href="https://thismightnotmatter.substack.com">thismightnotmatter.substack.com</a> &bull; 2026 &bull; <!-- BLOG POST LINK PLACEHOLDER --><a href="https://thismightnotmatter.substack.com/p/placeholder">thismightnotmatter.substack.com/p/placeholder</a>
+</footer>
+
+<dialog id="confirm" class="msgbox">
+  <div class="msgbox-title">IDONTWRITEWITHAI</div>
+  <div class="msgbox-body">
+    <span class="msgbox-icon" aria-hidden="true">?</span>
+    <p>Are you sure you want to subscribe to This Might Not Matter and also have us watch you (but not for real)?</p>
+  </div>
+  <div class="msgbox-actions">
+    <button type="button" id="confirm-yes">Yes</button>
+    <button type="button" id="confirm-no">No</button>
+  </div>
+</dialog>
+
+<dialog id="promo-screen" class="promo-screen">
+  <button type="button" id="promo-close" class="promo-close" title="close" aria-label="close">&times;</button>
+  <div class="promo-panel">
+    <p>thank you for your permission. enjoy your 50% off. and if you haven't already:</p>
+    <iframe id="promo-frame" class="promo-frame" data-src="https://thismightnotmatter.substack.com/embed?transparent=1" width="480" height="150" frameborder="0" scrolling="no" title="This Might Not Matter"></iframe>
+  </div>
+</dialog>
+
+<script src="script.js" defer></script>
+</body>
+</html>
